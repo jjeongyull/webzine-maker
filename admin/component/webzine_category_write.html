@@ -1,0 +1,52 @@
+<div class="mb-2">
+  <!-- content  -->
+  <div class="row items-center mb-3">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>등록유형</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_category_type" id="chk_category_type_main" value="0">
+        <label class="form-check-label" for="chk_category_type_main">
+          메인카테고리
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_category_type" id="chk_category_type_sub" value="1">
+        <label class="form-check-label" for="chk_category_type_sub">
+          하위카테고리
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2 items-center mb-3 display-none" id="child_select_div">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>상위 카테고리</label>
+    <div class="col-12 col-md-10">
+      <select class="form-select" id="parent_select">
+      </select>
+    </div>
+  </div>
+  
+  <div class="row mb-2 items-center mb-3">
+    <input type="hidden" id="idx">
+    <input type="hidden" id="type">
+    <label for="webzine_category_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>카테고리 명</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_category_name" maxlength="20" class="form-control" placeholder="추가할 카테고리를 입력하세요." required="">
+    </div>
+  </div>
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_category_view_order" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>카테고리 순서</label>
+    <div class="col-12 col-md-10">
+      <input type="number" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="webzine_category_view_order" maxlength="2" class="form-control" placeholder="메뉴 및 메인페이지에 보일 순서를 입력하세요." required="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    </div>
+  </div>
+
+
+  <div class="flex justify-end">
+    <button class="btn btn-primary" id="btn_insert_webzine_category">등록</button>
+  </div>
+</div>

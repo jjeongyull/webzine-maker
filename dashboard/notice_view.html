@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADDIT 고객사 게시판</title>
+
+  <!-- ggogle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+  <!-- ckEditor -->
+  <link rel="stylesheet" href="css/ckEditor.css">
+  <script src="js/ckEditor.js"></script>
+
+  <!-- js -->
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/const.js"></script>
+  <script src="js/const_html.js"></script>
+  <script src="js/modal_function.js"></script>
+  <script src="js/ck_event.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/utill.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- modal css -->
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+  <div class="alert-modal" id="alert_modal"></div>
+
+  <nav class="sidebar-nav" id="side_bar"></nav>
+
+  <section class="main-content p-10">
+    <div class="write-div">
+      <div class="write-div-inner">
+        <p class="date-p" id="write_date"></p>
+        <div class="n-head">
+          <div class="t-head">
+            <div class="t-trtr">제목</div>
+            <div class="t-trco" id="title"></div>
+          </div>
+          <div class="w-head">
+            <div class="t-trwr">작성자</div>
+            <div class="t-trwrco" id="writer"></div>
+          </div>
+          <div class="w-head">
+            <div class="t-hit">조희수</div>
+            <div class="t-hitco" id="hit"></div>
+          </div>
+        </div>
+
+        <div class="content-div" id="content"></div>
+
+        <div class="re-btn-group" id="re_div">
+          <button class="c-btn c-plus-btn btn-sm" id="btn_back">목록</button>
+          <button class="c-btn c-plus-btn btn-sm" id="btn_go_upPage">수정</button>
+          <button class="c-btn c-del-btn btn-sm" id="btn_del_notice">삭제</button>
+        </div>
+
+        <div class="view-file-div">
+          <h5 class="view-file-h5">첨부파일</h5>
+          <ul class="view-file-ul" id="f_list"></ul>
+        </div>
+
+        <!-- 댓글관련 -->
+        <div class="re-div" id="reple_div">
+        </div>
+
+        <div class="rw-div">
+          <textarea class="re-text" name="reple" id="reple" cols="30" rows="10"></textarea>
+          <button class="c-btn c-plus-btn btn-sm" id="insert_re">댓글쓰기</button>
+        </div>
+       
+        <div class="np-div" id="np_div">
+          <div class="n-div">
+            <p class="np-head">다음글</p>
+            <a class="view-file-a" href="">dsadadas</a>
+          </div>
+          <div class="n-div">
+            <p class="np-head">이전글</p>
+            <a class="view-file-a" href="">dsadadas</a>
+          </div>
+        </div>
+      </div>
+
+ 
+    </div>
+  </section>
+  
+
+
+  <!-- load.js -->
+  <script src="js/load_component.js"></script>
+</body>
+</html>

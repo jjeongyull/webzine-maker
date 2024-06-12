@@ -1,0 +1,98 @@
+{
+  "main" : {
+    "frame_width" : "1200",
+    "style" : "1",
+    "header" : {
+      "style" : "fixed",
+      "logo_image" : "https://webzine.menteimo.com/img/2/real_logo.png",
+      "img_width" : "120",
+      "logo_position" : "center, left, right",
+      "alignment" : "left(center, right)",
+      "search" : "",
+      "search_template": "1",
+      "serach_position" : "right(center)",
+      "menu_position" : "center",
+      "menu_color" : "white",
+      "menu_font_size" : "16",
+      "menu_font_weight" : "bold",
+      "header_width" : "100"
+    },
+    "banner": {
+      "banner_active" : "1",
+      "banner_width" : "full",
+      "banner_height" : "screen"
+    },
+    "scroll_info" : {
+      "scroll_mode" : "1",
+      "scroll_arrow" : "horizontal",
+      "content_couunt": 5
+    }
+  },
+  "contents" : {
+    "content_count" : 4,
+    "contents_category_text_view" : "0",
+    "contents_category_text_align" : "center",
+    "content_info" :[
+      {
+        "order": 1,
+        "width": 1100,
+        "content_template" : "1",
+        "content_slide" : "0",
+        "slide_max_count" : 4
+      },
+      {
+        "order": 2,
+        "width": 1100,
+        "content_template" : "2",
+        "content_slide" : "0",
+        "slide_max_count" : 4
+      },
+      {
+        "order": 3,
+        "width": 1100,
+        "content_template" : "3",
+        "content_slide" : "0",
+        "slide_max_count" : 4
+      },
+      {
+        "order": 4,
+        "width": 1100,
+        "content_template" : "4",
+        "content_slide" : "0",
+        "slide_max_count" : 4
+      }
+    ]
+  },
+  "footer": {
+    "img" : "https://webzine.menteimo.com/img/2/real_footer_logo.png",
+    "width": 1100,
+    "logo_width": "130",
+    "display" : "flex",
+    "align" : "center",
+    "title" : "한국표준협회 표준본부 표준협력센터",
+    "address" : "우) 06160 서울특별시 강남구 테헤란로 69길 5 DT센터 / TEL : 02-6240-4595",
+    "copylight" : "※ 본 웹진은 국가기술표준원의 국제표준활동지원 예산으로 발간하고 있습니다.",
+    "visible": true
+  },
+  "floating_menu" : {
+    "active" : 0,
+    "position" : "right-bottom",
+    "template" : "0",
+    "open_type": "blank",
+    "open_width" : "500",
+    "open_height" : "500",
+    "open_left" : "0",
+    "open_top" : "0",
+    "sns_list" : [ "kakao", "blog" ]
+  },
+  "sub_page" : {
+    "main_view_thumnail": "",    
+    "tab_template" : "0",
+    "other_content_view_template": "0",
+    "other_content_position" : "right, left, bottom",
+    "other_content_view_mode": "slide(satic)",
+    "other_content_silde_previre_count" : 5,
+    "sns_share_active" : "0",
+    "sns_share_position" : "center(right)"
+  }
+}

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>jstree basic demos</title>
+	<style>
+	html { margin:0; padding:0; font-size:62.5%; }
+	body { max-width:800px; min-width:300px; margin:0 auto; padding:20px 10px; font-size:14px; font-size:1.4em; }
+	h1 { font-size:1.8em; }
+	.demo { overflow:auto; border:1px solid silver; min-height:100px; }
+	</style>
+	<link rel="stylesheet" href="./../../dist/themes/default/style.min.css" />
+</head>
+<body>
+	<h1>HTML demo</h1>
+	<div id="html" class="demo">
+		<ul>
+			<li data-jstree='{ "opened" : true }'>Root node
+				<ul>
+					<li data-jstree='{ "selected" : true }'>Child node 1</li>
+					<li>Child node 2</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+
+	<h1>Inline data demo</h1>
+	<div id="data" class="demo"></div>
+
+	<h1>Data format demo</h1>
+	<div id="frmt" class="demo"></div>
+
+	<h1>AJAX demo</h1>
+	<div id="ajax" class="demo"></div>
+
+	<h1>Lazy loading demo</h1>
+	<div id="lazy" class="demo"></div>
+
+	<h1>Callback function data demo</h1>
+	<div id="clbk" class="demo"></div>
+
+	<h1>Interaction and events demo</h1>
+	<button id="evts_button">select node with id 1</button> <em>either click the button or a node in the tree</em>
+	<div id="evts" class="demo"></div>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="./../../dist/jstree.min.js"></script>
+	
+	<script>
+	// html demo
+	$('#html').jstree();
+
+  var Editable = true;
+  var Flag = {
+    CreateFolder: true,
+    RenameFolder: true,
+    DeleteFolder:true
+  };
+// dnd(Drag&Drop)도 있지만 쓰지는 않음
+//var Plugins = ['wholerow', 'unique','contextmenu','checkbox'];
+var Plugins = ['wholerow', 'unique','contextmenu'];
+
+  $('#data').jstree({
+            'core': {
+              "themes" : {
+                "variant" : "large"},
+            // 새 폴더를 만들 경우 사용
+            'strings': {
+                'New node': '새 폴더',
+                'check_callback': true,
+            },
+            // API 정보 입력
+            'data': 
+                  { "text" : "Root node", "children" : [
+                      { "text" : "Child node 1", "children" :[
+                      { "text" : "Child node 3"}, { "text" : "Child node 4"}]},
+                      { "text" : "Child node 2" }
+                  ]}
+            },
+            'force_text': true,
+            'check_callback': function (operation, node, parentNode, renameNodeText, more) {
+                // operation can be 'create_node', 'rename_node', 'delete_node', 'move_node' or 'copy_node'
+                // in case of 'rename_node' node_position is filled with the new node name
+                var validation = false;
+
+                if (Editable == false)
+                    return false;
+
+                switch (operation) {
+                    case 'create_node':
+                        // 생성이 안되는 곳이면 이곳에서 체크
+                        if (Flag.CreateFolder) {
+                            Flag.CreateFolder = false;
+                            return true;
+                        }
+                        // 직접 구현 필요!!
+                        CreateFolder(parentNode.id, node.text);
+                        break;
+                    case 'rename_node':
+                        if (Flag.RenameFolder) {
+                            Flag.RenameFolder = false;
+                            return true;
+                        }
+                        if (node.text == renameNodeText)
+                            return false;
+                        // 직접 구현 필요!!
+                        RenameFolder(node.original.folder_id, renameNodeText);
+                        break;
+                    case 'delete_node':
+                        if (Flag.DeleteFolder) {
+                            Flag.DeleteFolder = false;
+                            return true;
+                        }
+                        validation = false;
+                        confirm(String.format('선택하신 \"{0}\" 폴더와 하위폴더까지 전부 삭제됩니다. 정말 삭제하시겠습니까?', node.text), null, null, function (yes) {
+                            if (yes) {
+                                // 직접 구현 필요!!
+                                DeleteFolder(node.original.folder_id);
+                            }
+                        });
+                        break;
+                }
+
+                return validation;
+            },
+        "contextmenu": {
+            "items": function ($node) {
+                //var tree = $("#tree").jstree(true);
+                return {
+                    "create": {
+                        "separator_before": false,
+                        "separator_after": true,
+                        "_disabled": false,
+                        "label": "Create",
+                        "action": function (data) {
+                            alert('aaaa');
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.create_node(obj, {}, "last", function (new_node) {
+                                setTimeout(function () { inst.edit(new_node); }, 0);
+                            });
+                        }
+                    },
+                    "rename": {
+                        "separator_before": false,
+                        "separator_after": false,
+                        "_disabled": false,
+                        "label": "Rename",
+                        "action": function (data) {
+                          alert('aaaa');
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            inst.edit(obj);
+                        }
+                    },
+                    "remove": {
+                        "separator_before": false,
+                        "icon": false,
+                        "separator_after": false,
+                        "_disabled": false,
+                        "label": "Delete",
+                        "action": function (data) {
+                            var inst = $.jstree.reference(data.reference),
+                                obj = inst.get_node(data.reference);
+                            if (inst.is_selected(obj)) {
+                                inst.delete_node(inst.get_selected());
+                            }
+                            else {
+                                inst.delete_node(obj);
+                            }
+                        }
+                    },
+                };
+            }
+        },
+        'plugins': Plugins
+    });
+
+	// data format demo
+	$('#frmt').jstree({
+		'core' : {
+			'data' : [
+				{
+					"text" : "Root node",
+					"state" : { "opened" : true },
+					"children" : [
+						{
+							"text" : "Child node 1",
+							"state" : { "selected" : true },
+							"icon" : "jstree-file"
+						},
+						{ "text" : "Child node 2", "state" : { "disabled" : true } }
+					]
+				}
+			]
+		}
+	});
+
+	// ajax demo
+	$('#ajax').jstree({
+		'core' : {
+			'data' : {
+				"url" : "./root.json",
+				"dataType" : "json" // needed only if you do not supply JSON headers
+			}
+		}
+	});
+
+	// lazy demo
+	$('#lazy').jstree({
+		'core' : {
+			'data' : {
+				"url" : "//www.jstree.com/fiddle/?lazy",
+				"data" : function (node) {
+					return { "id" : node.id };
+				}
+			}
+		}
+	});
+
+	// data from callback
+	$('#clbk').jstree({
+		'core' : {
+			'data' : function (node, cb) {
+				if(node.id === "#") {
+					cb([{"text" : "Root", "id" : "1", "children" : true}]);
+				}
+				else {
+					cb(["Child"]);
+				}
+			}
+		}
+	});
+
+	// interaction and events
+	$('#evts_button').on("click", function () {
+		var instance = $('#evts').jstree(true);
+		instance.deselect_all();
+		instance.select_node('1');
+	});
+	$('#evts')
+		.on("changed.jstree", function (e, data) {
+			if(data.selected.length) {
+				alert('The selected node is: ' + data.instance.get_node(data.selected[0]).text);
+			}
+		})
+		.jstree({
+			'core' : {
+				'multiple' : false,
+				'data' : [
+					{ "text" : "Root node", "children" : [
+							{ "text" : "Child node 1", "id" : 1 },
+							{ "text" : "Child node 2" }
+					]}
+				]
+			}
+		});
+	</script>
+</body>
+</html>

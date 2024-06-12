@@ -1,0 +1,19 @@
+<div class="p-6">
+  <div class="row mb-3 items-center">
+    <input type="hidden" id="idx">
+    <label for="webzine_customer_name" class="col-md-3 col-form-label
+        form-label">고객사 명</label>
+    <div class="col-12 col-md-9">
+      <input type="text" id="webzine_customer_name" maxlength="50" class="form-control" placeholder="고객사명을 입력하세요.">
+    </div>
+  </div>
+  <div class="mt-6 flex items-center justify-end gap-x-2">
+    <button class="btn btn-primary btn-sm" id="btn_insert_webzine_customer">등록</button>
+    <button class="btn btn-danger display-none btn-sm" id="btn_del_webzine_customer">삭제</button>
+    <button id="btn_modal_close" class="btn btn-outline-secondary btn-sm">닫기</button>
+  </div>
+</div>
+
+<script>
+$('#btn_modal_close').hide_popup();
+</script>

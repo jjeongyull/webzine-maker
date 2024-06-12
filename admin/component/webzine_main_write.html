@@ -1,0 +1,406 @@
+<div class="mb-2">
+  <!-- content  -->
+  <!-- 메인배너 설정 -->
+  <h2 class="text-xl md:text-2xl font-bold mb-5">배너 설정</h2>
+  <div class="row mb-2 items-center mb-4">
+    <input type="hidden" id="idx">
+    <input type="hidden" id="type">
+    <label for="webzine_month" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>웹진 월</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_month" maxlength="20" class="form-control" placeholder="발행되는 월을 선택하세요" readonly>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="chk_banner_width" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너 넓이</label>
+      <div class="col-12 col-md-10 flex items-center gap-2">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="chk_banner_width" id="chk_banner_width_1" value="100%">
+          <label class="form-check-label" for="chk_banner_width_1">
+            100%
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="chk_banner_width" id="chk_banner_width_2" value="write">
+          <label class="form-check-label" for="chk_banner_width_2">
+            직접입력
+          </label>
+        </div>
+        <div class="col-4">
+          <input type="number" id="banner_width" maxlength="100" class="form-control col-2" placeholder="배너의 넓이를 작성해주세요." disabled>
+        </div>
+      </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="chk_banner_width" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너 높이</label>
+      <div class="col-12 col-md-10 flex items-center gap-2">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="chk_banner_height" id="chk_banner_height_1" value="0">
+          <label class="form-check-label" for="chk_banner_height_1">
+            화면전체
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" name="chk_banner_height" id="chk_banner_height_2" value="1">
+          <label class="form-check-label" for="chk_banner_height_2">
+            절반
+          </label>
+        </div>
+      </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너 유형</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_type" id="chk_banner_default" value="0">
+        <label class="form-check-label" for="chk_banner_default">
+          단일 이미지형
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_type" id="chk_banner_slide" value="1">
+        <label class="form-check-label" for="chk_banner_slide">
+          슬라이드형
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="chk_banner_link" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너 링크</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_link" id="chk_banner_link_1" value="0">
+        <label class="form-check-label" for="chk_banner_link_1">
+          링크 사용하지 않음(이미지 직접 첨부)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_link" id="chk_banner_link_2" value="1">
+        <label class="form-check-label" for="chk_banner_link_2">
+          카테고리를 링크로 사용
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="row items-center mb-4">
+    <label for="chk_banner_link_sel" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>배너 링크 내용</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_link_sel" id="chk_banner_link_sel_1" value="0" disabled>
+        <label class="form-check-label" for="chk_banner_link_sel_1">
+          하나의 카테고리의 전체 콘텐츠
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_link_sel" id="chk_banner_link_sel_2" value="1" disabled>
+        <label class="form-check-label" for="chk_banner_link_sel_2">
+          각 카테고리의 1번 콘텐츠(중복선택)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4 display-none" id="category_select_div">
+    <label for="chk_banner_link_sel" class="col-12 col-md-2 col-form-label
+        form-label text-muted"> 배너 카테고리 선택</label>
+    <div class="col-12 col-md-10 flex items-center gap-2" id="sel_banner_area">
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="chk_banner_title_visible" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>타이틀 노출</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_title_visible" id="chk_banner_title_visible_1" value="0">
+        <label class="form-check-label" for="chk_banner_title_visible_1">
+          배너에 보이게
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_title_visible" id="chk_banner_title_visible_2" value="1">
+        <label class="form-check-label" for="chk_banner_title_visible_2">
+          타이틀 숨김
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_pdf_file" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>웹진 PDF</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="webzine_pdf_file" class="form-control" placeholder="pdf파일을 선택하세요">
+    </div>
+    <ul class="w-full" id="pdf_file_list"></ul>
+  </div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_web_banner" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>웹 배너</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="webzine_main_banner" class="form-control" placeholder="웹배너를 선택하세요" multiple disabled>
+    </div>
+    <ul class="w-full" id="main_file_list"></ul>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="chk_banner_title_active" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너별 타이틀</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_title_active" id="chk_banner_title_active_1" value="1">
+        <label class="form-check-label" for="chk_banner_title_active_1">
+          사용
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_title_active" id="chk_banner_title_active_2" value="0">
+        <label class="form-check-label" for="chk_banner_title_active_2">
+          미사용
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div id="banner_title_div"></div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_main_description" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>페이지 설명</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_main_description" maxlength="300" class="form-control" placeholder="페이지에 대한 설명을 간략히 작성해주세요.">
+    </div>
+  </div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_main_title" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>타이틀</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_main_title" maxlength="200" class="form-control" placeholder="메인타이틀을 입력하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_main_title" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>폰트사이즈</label>
+    <div class="col-12 col-md-10 flex items-center">
+      <input type="range" class="form-range" id="title_font_size" min="12" max="100" step="1" value="12">
+      <output class="ml-2" for="title_font_size" id="font_size_output">12</output>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>폰트굵기</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_font_weight" id="chk_font_slim" value="0">
+        <label class="form-check-label" for="chk_font_slim">
+          얇게
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_font_weight" id="chk_font_bold" value="1">
+        <label class="form-check-label" for="chk_font_bold">
+          굵게
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_main_sub_title" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>서브 타이틀</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_main_sub_title" maxlength="20" class="form-control" placeholder="서브타이틀을 입력하세요.">
+    </div>
+  </div>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="sub_title_font_size" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>폰트사이즈</label>
+    <div class="col-12 col-md-10 flex items-center">
+      <input type="range" class="form-range" id="sub_title_font_size" min="12" max="100" step="1" value="12">
+      <output class="ml-2" for="sub_title_font_size" id="sub_font_size_output">12</output>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>폰트굵기</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_sub_font_weight" id="chk_sub_font_slim" value="0">
+        <label class="form-check-label" for="chk_sub_font_slim">
+          얇게
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_sub_font_weight" id="chk_sub_font_bold" value="1">
+        <label class="form-check-label" for="chk_sub_font_bold">
+          굵게
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>타이틀 정렬</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_align" id="chk_title_left" value="left">
+        <label class="form-check-label" for="chk_title_left">
+          왼쪽
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_align" id="chk_title_center" value="center">
+        <label class="form-check-label" for="chk_title_center">
+          중앙
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_align" id="chk_title_right" value="right">
+        <label class="form-check-label" for="chk_title_right">
+          오른쪽
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>타이틀 위치</label>
+    <div class="col-12 col-md-10 flex items-center gap-2 flex-wrap">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_left_top" value="left-top">
+        <label class="form-check-label" for="chk_title_left_top">
+          왼쪽 위 모서리
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_center_center" value="center">
+        <label class="form-check-label" for="chk_title_center_center">
+          중앙
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_right_top" value="right-top">
+        <label class="form-check-label" for="chk_title_right_top">
+          오른쪽 위 모서리
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_right_bottom" value="right-bottom">
+        <label class="form-check-label" for="chk_title_right_bottom">
+          오른쪽 아래 모서리
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_left_bottom" value="left-bottom">
+        <label class="form-check-label" for="chk_title_left_bottom">
+          왼쪽 아래 모서리
+        </label>
+      </div>
+    </div>
+
+  <div class="row items-center mb-4">
+    <label for="chk_title_logo_view" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>타이틀 로고 옆 노출</label>
+    <div class="col-12 col-md-10 flex items-center gap-2 flex-wrap">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_logo_view" id="chk_title_logo_view_1" value="1">
+        <label class="form-check-label" for="chk_title_logo_view_1">
+          노출
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_logo_view" id="chk_title_logo_view_2" value="0">
+        <label class="form-check-label" for="chk_title_logo_view_2">
+          미노출
+        </label>
+      </div>
+    </div>
+ 
+    </div>
+  </div>
+
+  <!-- 콘텐츠 설정 -->
+  <h2 class="text-xl md:text-2xl font-bold mb-5 mt-5">페이지 섹션 설정</h2>
+  <div class="row items-center mb-4">
+    <label for="chk_page_type" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>페이지 타입</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_page_type" id="chk_page_type_1" value="0">
+        <label class="form-check-label" for="chk_page_type_1">
+          풀페이지(세로스크롤)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_page_type" id="chk_page_type_2" value="1">
+        <label class="form-check-label" for="chk_page_type_2">
+          풀페이지(가로스크롤)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_page_type" id="chk_page_type_3" value="2">
+        <label class="form-check-label" for="chk_page_type_3">
+          일반
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div id="section_div"></div>
+  <button class="section-plus-btn mb-10" id="btn_section_plus">+</button>
+
+  <div class="row mb-2 items-center mb-4">
+    <label for="webzine_thumnail" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>메인 썸네일</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="webzine_main_thumnail" class="form-control" placeholder="썸네일을 선택하세요" required="">
+    </div>
+    <ul class="w-full" id="thumnail_file_list"></ul>
+  </div>
+
+  <div class="row items-center mb-4">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>발행여부</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_active" id="chk_main_none_active" value="0">
+        <label class="form-check-label" for="chk_main_none_active">
+          미발행
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_active" id="chk_main_active" value="1">
+        <label class="form-check-label" for="chk_main_active">
+          발행
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+  <div class="flex justify-end">
+    <button class="btn btn-primary" id="btn_insert_webzine_main">등록</button>
+  </div>
+</div>

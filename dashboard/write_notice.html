@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADDIT 고객사 게시판</title>
+
+  <!-- ggogle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+  <!-- ckEditor -->
+  <link rel="stylesheet" href="css/ckEditor.css">
+  <script src="js/ckEditor.js"></script>
+
+  <!-- js -->
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/const.js"></script>
+  <script src="js/const_html.js"></script>
+  <script src="js/modal_function.js"></script>
+  <script src="js/ck_event.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/utill.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- modal css -->
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+  <div class="alert-modal" id="alert_modal"></div>
+
+  <nav class="sidebar-nav" id="side_bar"></nav>
+
+  <section class="main-content p-10">
+    <div class="write-div">
+      <div class="write-div-inner">
+        <div class="w-input-div">
+          <label class="w-label" for="n_title">제목</label>
+          <input class="w-input" maxlength="500" type="text" id="n_title" placeholder="제목을 입력하세요.">
+        </div>  
+
+        <div class="editor-div" id="editor"></div>
+
+        <div class="w-input-div">
+          <label class="w-label" for="n_file">첨부파일</label>
+          <input class="w-input" type="file" id="n_file" placeholder="파일을 등록하세요.">
+        </div> 
+        
+        <div>
+          <h4 class="file-h4">첨부파일 목록</h4>
+          <ul class="file-ul" id="file_area">
+          </ul>
+        </div>
+
+        <div class="write-btn-group">
+          <button class="c-btn c-plus-btn" id="btn_insert_notice">작성</button>
+          <button class="c-btn c-plus-btn display-none" id="btn_delete_notice">삭제</button>
+        </div>
+       
+      </div>
+
+ 
+    </div>
+  </section>
+  
+
+
+  <!-- load.js -->
+  <script src="js/load_component.js"></script>
+</body>
+</html>

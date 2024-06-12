@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADDIT 고객사 게시판</title>
+
+  <!-- ggogle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+  <!-- js -->
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/const.js"></script>
+  <script src="js/const_html.js"></script>
+  <script src="js/modal_function.js"></script>
+  <script src="js/ck_event.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/utill.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- modal css -->
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+  <div class="alert-modal" id="alert_modal"></div>
+
+  <nav class="sidebar-nav" id="side_bar"></nav>
+
+  <section class="main-content p-10">
+    <div class="w-full c-list-div">
+      <div class="c-list">
+        <div class="w-full">
+          <input type="hidden" id="idx">
+          <h3 class="main-h2 flex-box"><span id="c_title">사용자 추가</span> <button class="r-btn c-plus-btn display-none" id="user_refresh"><i class='bx bx-refresh' ></i></button></h3>
+          <input class="s-input mb-10" type="text" id="mem_name" maxlength="50" placeholder="이름을 입력하세요.">
+          <input class="s-input mb-10" type="text" id="mem_id" maxlength="50" placeholder="아이디를 입력하세요.">
+          <input class="s-input mb-10" type="text" id="mem_email" maxlength="100" placeholder="이메일을 입력하세요.">
+          <input class="s-input mb-10" type="password" id="mem_password" maxlength="50" placeholder="비밀번호를 입력하세요.">
+          <input class="s-input mb-10" type="password" id="mem_password_check" maxlength="50" placeholder="비밀번호 확인을 입력하세요.">
+
+          <select class="s-input mb-10" id="sel_user_customer"></select>
+
+          <div class="r-box mb-10">
+            <div class="r-div">
+              <input type="radio" id="mem_active_1" name="mem_active" value="1">
+              <label for="mem_active_1">활성화</label>
+            </div>
+            <div class="r-div">
+              <input type="radio" id="mem_active_0" name="mem_active" value="0">
+              <label for="mem_active_0">비활성화</label>
+            </div>
+          </div>
+
+          <div class="r-box mb-10">
+            <div class="r-div">
+              <input type="radio" id="mem_level_1" name="mem_level" value="1">
+              <label for="mem_level_1">일반사용자</label>
+            </div>
+            <div class="r-div">
+              <input type="radio" id="mem_level_3" name="mem_level" value="3">
+              <label for="mem_level_3">사내임직원</label>
+            </div>
+            <div class="r-div">
+              <input type="radio" id="mem_level_0" name="mem_level" value="5">
+              <label for="mem_level_0">관리자</label>
+            </div>
+          </div>
+
+          <div class="mb-10 display-none" id="ad_sel_div">
+            <input class="s-input mb-10" type="text" id="mem_admin_list" name="mem_admin_list" value="" readonly placeholder="관리할 게시판을 아래에서 선택하세요.">
+            <div class="ad-sel-box" id="ad_sel_box">
+              <p class="ad-p">관리할 고객사들을 선택하세요.</p>
+              <ul class="ad-ul" id="ad_ul">
+                
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="btn-group">
+            <button class="c-btn c-plus-btn" id="btn_admin_user_insert">사용자 추가</button>
+            <button class="c-btn c-del-btn display-none" id="btn_del_user">사용자 삭제</button>
+          </div>
+          
+        </div>
+        
+      </div>
+      <div class="c-table">
+        <button class="c-btn c-del-btn btn-sm" style="margin-bottom: 15px;" id="btn_check_del_user">선택삭제</button>
+        <table class="s-table">
+          <thead class="s-thead">
+            <tr class="s-tr">
+              <th class="s-th" style="width: 20px;"><input type="checkbox" name="user_all_check" id="user_all_check"></th>
+              <th class="s-th">번호</th>
+              <th class="s-th">아이디</th>
+              <th class="s-th">이름</th>
+              <th class="s-th">이메일</th>
+              <th class="s-th">상태</th>
+              <th class="s-th">최근 로그인 일자</th>
+            </tr>
+          </thead>
+          <tbody class="s-tbody" id="user_table"></tbody>
+        </table>
+        <div class="pagenation" id="pagenation_div"></div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- load.js -->
+  <script src="js/load_component.js"></script>
+  <script>
+    $('#mem_id').preventKorean();
+    $('#mem_email').preventKorean();
+  </script>
+</body>
+</html>

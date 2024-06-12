@@ -1,0 +1,37 @@
+<div class="modal-inner w-11/12 md:w-1/3 rounded-xl">
+  <div class="modal-top pb-3 mb-3">
+    <h2 class="text-lg font-blod md:text-xl">제작문의</h2>
+  </div>
+  <input type="hidden" id="con_idx">
+  <div class="modal-body">
+    <div class="w-full flex items-center mb-4">
+      <label class="w-1/6" for="name">이름</label>
+      <input class="w-5/6 p-2 rounded border-gray" type="text" id="name" placeholder="이름을 작성해주세요."/>
+    </div>
+    <div class="w-full flex items-center mb-4">
+      <label class="w-1/6" for="tell">전화번호</label>
+      <input class="w-5/6 p-2 rounded border-gray" type="text" id="tell" placeholder="전화번호를 작성해주세요." oninput="formatPhoneNumber(this)"/>
+    </div>
+    <div class="w-full flex items-center mb-4">
+      <label class="w-1/6" for="e_mail">이메일</label>
+      <input class="w-5/6 p-2 rounded border-gray" type="text" id="e_mail" placeholder="이메일을 작성해주세요."/>
+    </div>
+    <div class="w-full flex mb-6">
+      <label class="w-1/6" for="contact_info">문의내용</label>
+      <textarea class="w-5/6 p-2 rounded border-gray" type="text" id="contact_info" placeholder="문의내용이 있으면 적어주세요."></textarea>
+    </div>
+    <div class="w-full mb-4">
+      <p class="mb-2">개인정보 처리방침</p>
+      <div class="w-full bg-gray-200 p-3 h-44 overflow-y-scroll">
+        개인정보 처리방침 내용
+      </div>
+    </div>
+    <div class="w-full mb-4 flex justify-end">
+      <label class="w-fit flex items-center" for="chk_agree"><input class="mr-1" type="checkbox" id="chk_agree" name="chk_agree">개인정보 처리방침에 동의합니다</label>
+    </div>
+  </div>
+  <div class="modal-bottom flex justify-end pt-3 border-top-1">
+    <button class="px-3 py-2 bg-sky-700 text-white rounded" id="btn_contact">문의하기</button>
+    <button class="px-3 py-2 ml-2 bg-red-700 text-white rounded" id="btn_popup_close">닫기</button>
+  </div>
+</div>

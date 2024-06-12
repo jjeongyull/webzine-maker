@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tabulator 테이블 테스트</title>
+  <style>
+    .wrap{
+      max-width: 1000px;
+      margin: 0 auto;
+      width: 100%;
+    }
+  </style>
+  <!-- js파일 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+  <script src="js/const.js"></script>
+  <script src="js/api.js"></script>
+
+  <!-- css list -->
+  <link rel="stylesheet" href="css/tabulator_site.css">
+
+</head>
+<body>
+  <ul class="wrap" style="margin-bottom: 20px;">
+    <li><a href="index.html">main</a></li>
+    <li><a href="bulma.html">bulma</a></li>
+    <li><a href="tabulator_midnight.html">tabulator_midnight</a></li>
+    <li><a href="tabulator_modern.html">tabulator_modern</a></li>
+    <li><a href="tabulator_site.html">tabulator_site</a></li>
+    <li><a href="tabulator_site_dark.html">tabulator_site_dark</a></li>
+  </ul>
+  <div class="wrap" id="table"></div>
+  <script src="js/tabulator.js"></script>
+  <script src="js/table_load.js"></script>
+</body>
+</html>

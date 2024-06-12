@@ -1,0 +1,89 @@
+.alert-modal{
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--tran-02);
+}
+.alert-inner{
+  max-width: 300px;
+  width: 100%;
+  background: #fff;
+  padding: 20px 15px;
+  border-radius: 20px;
+  text-align: center;
+  position: relative;
+  top: 60px;
+  opacity: 0;
+  visibility: hidden;
+  transition: var(--tran-05);
+}
+.alert-icon-div{
+  margin-bottom: 15px;
+}
+.alert-text-div{
+  margin-bottom: 20px;
+}
+.alert-icon-div i{
+  font-size: 45px;
+  color: #B9B9B9;
+}
+.alert-main-text{
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  word-break: keep-all;
+}
+.alert-sub-text{
+  font-size: 14px;
+  color: #B9B9B9; 
+  word-break: break-all;
+}
+.alert-btn-group{
+  display: flex;
+  aling-items: center;
+  gap: 15px;
+}
+.alert-btn{
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #fff;
+  padding: 10px 0;
+}
+.alert-btn-true{
+  background:  var(--primary-color);
+}
+.alert-btn-false{
+  background:  #727272;
+}
+.alert-btn-true:hover{
+  background: var(--primary-color-3);
+}
+
+/* Alert 노출 */
+.alert-modal.view{
+  opacity: 1;
+  visibility: visible;
+}
+.alert-modal.view .alert-inner{
+  opacity: 1;
+  visibility: visible;
+  top: 0;
+}
+.text-red{
+  color: red !important;
+}
+.text-green{
+  color: green !important;
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADDIT 고객사 게시판 로그인</title>
+
+  <!-- ggogle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/login_style.css">
+
+  <!-- modal css -->
+  <link rel="stylesheet" href="css/modal.css">
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+  <!-- JS -->
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/const.js"></script>
+  <script src="js/const_html.js"></script>
+  <script src="js/modal_function.js"></script>
+  <script src="js/ck_event.js"></script>
+  <script src="js/utill.js"></script>
+</head>
+<body>
+  <div class="alert-modal" id="alert_modal"></div>
+
+  <div class="main">
+    <input type="checkbox" class="chk" id="chk" aria-hidden="true">
+
+    <div class="signup">
+        <label for="chk" aria-hidden="true">Sign up</label>
+        <input class="lo-input" type="text" maxlength="50" name="text" id="user_name" placeholder="User Name">
+        <input class="lo-input" type="text" maxlength="50" name="text" id="user_id" placeholder="User ID">
+        <input class="lo-input" type="text" maxlength="50" name="email" id="user_email" placeholder="User Email">
+        <input class="lo-input" type="password" maxlength="50" name="password" id="user_password" placeholder="User Password">
+        <input class="lo-input" type="password" maxlength="50" name="password" id="user_password_check" placeholder="User Password Check">
+        <button class="login-btn" id="btn_sign">Sign up</button>
+    </div>
+
+    <div class="login">
+        <label for="chk" aria-hidden="true">Login</label>
+        <input class="lo-input" type="text" maxlength="50" name="mem_id" id="mem_id" placeholder="User ID">
+        <input class="lo-input" type="password" maxlength="50" name="mem_password" id="mem_password" placeholder="User Password">
+        <button class="login-btn" id="btn_login">Login</button>
+    </div>
+  </div>
+
+  <script>
+    $('#user_id').preventKorean();
+    $('#user_email').preventKorean();
+    $('#mem_id').preventKorean();
+
+    $(function(){
+      if (isEmpty(g_access_token)){
+        login_token("server/api_main.php");
+      }
+    });
+</script>
+</body>
+</html>

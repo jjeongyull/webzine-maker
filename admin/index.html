@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="웹진 제작 사이트">
+ 
+    <!-- 모바일 웹 자동 링크 제거 -> 전화걸기 방지 -->
+    <meta content="telephone=no" name="format-detection">
+
+    <!-- 모바일 처리 : https://jeongah-story.tistory.com/202 , https://developers.google.com/web/fundamentals/design-and-ux/browser-customization?hl=ko 참고 -->
+    <meta name="apple-mobile-web-app-title" content="웹진 제작 사이트">
+    <link rel="apple-touch-icon" href="#">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-startup-image" href="#">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    
+    <!-- https://ogp.me/ 참고 -->
+    <!-- SNS에서 공유 시 기본적으로 웹에 설정해줘야하는 og 메타태그 : Naver 블로그, 카카오톡 미리보기 설정 -->
+    <meta property="og:title" content="웹진 제작 사이트"> <!-- SNS에서 공유 시 보여주는 타이틀-->
+    <meta name="og:type" content="website">
+    <meta property="og:image" content=""> <!-- SNS에서 공유 시 보여주는 이미지 -->
+    <meta property="og:url" content=""> <!-- SNS에서 공유 시 보여주는 이미지-->
+    <meta property="og:description" content="웹진 제작 사이트"> <!-- SNS에서 공유 시 보여주는 설명문구 -->
+    <meta property="og:locale" content="kr-KR"> <!-- SNS에서 공유 시 언어-지역, en-US 등 두개 이상 둘 수 있음 -->
+    <meta property="og:site-name" content="웹진 제작 사이트">
+    <!-- 선택적 -->
+    <meta property="og:image:width" content="1066"> <!-- SNS에서 공유 시 보여주는 이미지 크기 -->
+    <meta property="og:image:height" content="558"> <!-- SNS에서 공유 시 보여주는 이미지 높이 -->
+
+  <title>웹진 제작 사이트</title>
+
+  <!-- swiper -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+  <!-- color picker -->
+  <script src="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/spectrum-colorpicker2/dist/spectrum.min.css">
+
+  <!-- Libs CSS -->
+  <link href="assets/libs/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/libs/dropzone/dist/dropzone.css"  rel="stylesheet">
+  <link href="assets/libs/@mdi/font/css/materialdesignicons.min.css" rel="stylesheet" />
+  <link href="assets/libs/prismjs/themes/prism-okaidia.min.css" rel="stylesheet">
+  <link href="assets/css/custom.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+  <!-- 수정 테마 : 버튼 -->
+
+
+  <!-- ckeditor -->
+  <link rel="stylesheet" href="assets/css/ckeditor.css">
+  <script src="https://cdn.ckeditor.com/ckeditor5/38.1.0/super-build/ckeditor.js"></script>
+
+
+  <!-- Theme CSS -->
+  <link rel="stylesheet" href="./assets/css/theme.css">
+
+  <!-- tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <link rel="stylesheet" href="assets/css/addit.css">
+  <link rel="stylesheet" href="./assets/css/button.css">
+
+  <!-- iziModal Libaray : https://cdnjs.com/libraries/izimodal-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/js/iziModal.js"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/izimodal/1.6.1/css/iziModal.css" rel="stylesheet">
+
+
+  <!-- datatable -->
+  <script src="../lib/datatable_1_13_6/datatable.js"></script>
+  <link href="../lib/datatable_1_13_6/datatable.css" rel="stylesheet">
+  <script src="../lib/datatable_1_13_6/buttons.js"></script>
+  <script src="../lib/datatable_1_13_6/jszip.js"></script>
+  <script src="../lib/datatable_1_13_6/buttons_html5.js"></script>
+  <script src="../lib/datatable_1_13_6/buttons_print.js"></script>
+  
+  <!-- 체크박스 관련 -->
+  <link type="text/css" href="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/css/dataTables.checkboxes.css" rel="stylesheet" />
+  <script type="text/javascript" src="//gyrocode.github.io/jquery-datatables-checkboxes/1.2.12/js/dataTables.checkboxes.min.js"></script>
+
+  <!-- js -->
+  <script src="../js/utill.js"></script>
+  <script src="../js/const.js"></script>
+  <script src="../js/api.js"></script>
+  <script src="../js/ck_dev_event.js"></script>
+  <script src="../js/draw_event.js"></script>
+  <script src="../js/draw_page.js"></script>
+  <script src="js/common.js"></script>
+</head>
+<body>
+  <div class="modal fade" id="modal_div" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content" id="modal_body">
+      </div>
+    </div>
+  </div>
+
+  <div class="status-modal" id="modal-alert2"></div>
+
+  <div class="w-full h-screen relative" id="login_div"></div>
+
+  <div class="db-wrapper" id="db_wrapper" ></div>
+
+  <!--  offcanvas-start,  offcanvas-top, offcanvas-end, offcanvas-bottom-->
+  <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel">
+    <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-lg md:text-xl" id="canvas_title"></h5>
+      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body" id="canvas_body">
+      
+    </div>
+  </div>
+
+  <div id="modal_popup_1" aria-hidden="true" role="dialog">
+    <div id="popup_content_1"></div>
+  </div>
+  <div id="modal_status" class="status-modal"> 
+  </div>
+
+  <script>
+    $(async function(){
+      await getPageList(AdminList);    
+      if (!isEmpty(g_access_token)){
+          
+        }else{
+          // 로그인 되었는지 체크한다.
+          login_token();
+        }
+
+        
+    });
+    $(document).on('click', "#nav_toggle", function(e){
+      e.preventDefault(),
+      $("#db_wrapper").toggleClass("toggled")
+    });
+
+  </script>
+
+  <!-- Libs JS -->
+  <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/libs/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+  <script src="assets/libs/feather-icons/dist/feather.min.js"></script>
+  <script src="assets/libs/prismjs/prism.js"></script>
+  <script src="assets/libs/apexcharts/dist/apexcharts.min.js"></script>
+  <script src="assets/libs/dropzone/dist/min/dropzone.min.js"></script>
+  <script src="assets/libs/prismjs/plugins/toolbar/prism-toolbar.min.js"></script>
+  <script src="assets/libs/prismjs/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/locales/bootstrap-datepicker.ko.min.js"></script>
+
+
+</body>
+</html>

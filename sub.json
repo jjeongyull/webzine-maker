@@ -1,0 +1,295 @@
+[
+  {
+    "idx": 1,
+    "category_idx": 1,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/10/interview_3.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "INSIDE",
+      "sub_title" : "인공지능 표준화, 기술발전과 혁신을 이끄는 길"
+    },
+    "view_order": 2,
+    "hit_count": 0,
+    "write_date": "",
+    "href" : "idx"
+  },
+  {
+    "idx": 2,
+    "category_idx": 1,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/10/inside_1.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "INTERVIEW",
+      "sub_title" : "책임감 있는 AI 발전 위한 표준 생태계 필요"
+    },
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 4,
+    "category_idx": 1,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/10/sub1_main.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "INSIGHT",
+      "sub_title" : "차세대 인공지능 국제표준 선점을 위한 우리의 전략"
+    },
+    "view_order": 3,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 5,
+    "category_idx": 1,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/10/initiative_1.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "INTIATIVE",
+      "sub_title" : "차세대 인공지능 국제표준 선점을 위한 우리의 전략"
+    },
+    "thumnail": "",
+    "view_order": 4,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 6,
+    "category_idx": 2,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner" : "https://webzine.menteimo.com/img/2/2024-01/9/kat_Thum.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "첨단 산업 이슈",
+      "sub_title" : "협력경쟁 시대에 주목할 10대 유망산업 발표"
+    },
+    "thumnail": "",
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 7,
+    "category_idx": 2,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "sub_title": "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/9/dsfdsfvc.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "표준 청책 이슈",
+      "sub_title" : "첨단산업 표준 리더십 포럼 운영으로 표준선점 역량 확보한다"
+    },
+    "thumnail": "",
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 8,
+    "category_idx": 2,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner" : "https://webzine.menteimo.com/img/2/2024-01/9/kat_Thum.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "첨단 산업 이슈",
+      "sub_title" : "협력경쟁 시대에 주목할 10대 유망산업 발표"
+    },
+    "thumnail": "",
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 9,
+    "category_idx": 2,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/9/dsfdsfvc.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "표준 청책 이슈",
+      "sub_title" : "첨단산업 표준 리더십 포럼 운영으로 표준선점 역량 확보한다"
+    },
+    "thumnail": "",
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 10,
+    "category_idx": 3,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/12/img_1.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "발간사",
+      "sub_title" : "발간사"
+    },
+    "thumnail": "",
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 11,
+    "category_idx": 3,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/12/sdasdadas.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "캘린더",
+      "sub_title" : "캘린더"
+    },
+    "thumnail": "",
+    "view_order": 2,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 11,
+    "category_idx": 3,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/12/kat_Thum.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "사업공고",
+      "sub_title" : "사업공고"
+    },
+    "thumnail": "",
+    "view_order": 3,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 12,
+    "category_idx": 3,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/12/inside_2_c_2.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "주요통계",
+      "sub_title" : "주요통계"
+    },
+    "thumnail": "",
+    "view_order": 4,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 13,
+    "category_idx": 4,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/12/img_1.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "캘린더",
+      "sub_title" : "캘린더"
+    },
+    "thumnail": "",
+    "view_order": 1,
+    "write_date": "",
+    "hit_count": 0
+  },
+  {
+    "idx": 14,
+    "category_idx": 4,
+    "publish_idx" : "2024-01",
+    "contents" : "",
+    "category_name" : "",
+    "banner" : {
+      "banner": "https://webzine.menteimo.com/img/2/2024-01/12/inside_2_c_2.jpg",
+      "visible" : "",
+      "banner_type" : "blur",
+      "banner_text_position" : "in(out)",
+      "banner_tent_align" : "center(left)",
+      "banner_height" : "1/2",
+      "title" : "사업공고",
+      "sub_title" : "사업공고"
+    },
+    "thumnail": "",
+    "view_order": 2,
+    "write_date": "",
+    "hit_count": 0
+  }
+]

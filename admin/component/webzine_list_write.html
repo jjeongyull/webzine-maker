@@ -1,0 +1,302 @@
+<div class="mb-2">
+  <!-- content  -->
+  <h2 class='text-lg md:text-2xl mb-5' id="title"></h2>
+
+  <!-- 웹진 해당 월 -->
+  <div class="row mb-2 items-center mb-3">
+    <input type="hidden" id="idx">
+    <label for="month_select" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>웹진 월</label>
+    <div class="col-12 col-md-10">
+      <select class="form-select" id="month_select">
+      </select>
+    </div>
+  </div>
+
+  <!-- 카테고리 선택 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="category_select" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>카테고리</label>
+    <div class="col-12 col-md-10">
+      <select class="form-select" id="category_select">
+      </select>
+    </div>
+  </div>
+
+  <!-- 서브 카테고리 명 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_sub_category_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>서브 카테고리</label>
+    <div class="col-12 col-md-10">
+      <select class="form-select" id="sub_category_select">
+      </select>
+    </div>
+  </div>
+
+  <!-- 페이지 제목 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>페이지 제목</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_name" class="form-control" placeholder="추가할 웹진 명을 입력하세요." maxlength="100">
+    </div>
+  </div>
+
+  <!-- 페이지 부제목 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_sub_name" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>페이지 부제목</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_sub_name" class="form-control" placeholder="추가할 웹진 부제목을 입력하세요." maxlength="100">
+    </div>
+  </div>
+
+  <!-- 배너에 타이틀 노출 -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>제목 또는 카테고리 명 위치 설정</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_visible" id="chk_title_visible_1" value="fixed">
+        <label class="form-check-label" for="chk_title_visible_1">
+          배너 내부
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_visible" id="chk_title_visible_2" value="nomal">
+        <label class="form-check-label" for="chk_title_visible_2">
+          배너 외부(배너 밑에 노출됩니다)
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 타이틀 align -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>제목 또는 카테고리 명 정렬</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_align" id="chk_title_align_1" value="left">
+        <label class="form-check-label" for="chk_title_align_1">
+          가로
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_align" id="chk_title_align_2" value="center">
+        <label class="form-check-label" for="chk_title_align_2">
+          중앙
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_align" id="chk_title_align_3" value="right">
+        <label class="form-check-label" for="chk_title_align_3">
+          세로
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 타이틀 position -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>제목 또는 카테고리 명 위치</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_position_1" value="left">
+        <label class="form-check-label" for="chk_title_position_1">
+          가로
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_position_2" value="center">
+        <label class="form-check-label" for="chk_title_position_2">
+          중앙
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_title_position" id="chk_title_position_3" value="right">
+        <label class="form-check-label" for="chk_title_position_3">
+          세로
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 타이틀 color -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>제목 색상</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <input type="text" id="title_color" maxlength="100" class="form-control" placeholder="타이틀 색상을 선택하세요." readonly>
+    </div>
+  </div>
+
+  <!-- 타이틀 폰트 사이즈 -->
+  <div class="row mb-2 items-center mb-4">
+    <label for="title_font_size" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>제목 폰트사이즈</label>
+    <div class="col-12 col-md-10 flex items-center">
+      <input type="range" class="form-range" id="title_font_size" min="12" max="100" step="1" value="12">
+      <output class="ml-2" for="title_font_size" id="title_font_size_output">12</output>
+    </div>
+  </div>
+
+  <!-- 서브타이틀 폰트 사이즈 -->
+  <div class="row mb-2 items-center mb-4">
+    <label for="sub_title_font_size" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>부제목 폰트사이즈</label>
+    <div class="col-12 col-md-10 flex items-center">
+      <input type="range" class="form-range" id="sub_title_font_size" min="12" max="100" step="1" value="12">
+      <output class="ml-2" for="sub_title_font_size" id="sub_title_font_size_output">12</output>
+    </div>
+  </div>
+
+  <!-- 페이지 설명 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_sub_description" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>페이지 설명</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_sub_description" class="form-control" placeholder="해당 페이지의 설명을 입력하세요." maxlength="300">
+    </div>
+  </div>
+
+  <!-- 작성자 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_writer" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>작성자</label>
+    <div class="col-12 col-md-10">
+      <input type="text" id="webzine_writer" class="form-control" placeholder="추가할 웹진 작성자를 입력하세요." maxlength="50">
+    </div>
+  </div>
+
+  <!-- 작성자 노출 여부 -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>작성자정보 페이지 노출 여부</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_writer_visible" id="chk_writer_visible_1" value="1">
+        <label class="form-check-label" for="chk_writer_visible_1">
+          노출
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_writer_visible" id="chk_writer_visible_2" value="0">
+        <label class="form-check-label" for="chk_writer_visible_2">
+          미노출
+        </label>
+      </div>
+    </div>
+  </div>
+
+  <!-- 배너 -->
+  <div class="row mb-2 items-center mb-3">
+    <label for="webzine_main_banner" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="webzine_main_banner" class="form-control" placeholder="웹배너를 선택하세요">
+    </div>
+    <ul class="w-full" id="main_file_list"></ul>
+  </div>
+
+  <!-- 배너 높이 -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>배너 높이</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_height" id="chk_banner_height_1" value="0">
+        <label class="form-check-label" for="chk_banner_height_1">
+          화면전체
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_banner_height" id="chk_banner_height_2" value="1">
+        <label class="form-check-label" for="chk_banner_height_2">
+          절반
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <!-- 썸네일 -->
+  <div class="row mb-2 items-center mb-5">
+    <label for="webzine_main_thumnail" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700">* </span>메인 썸네일</label>
+    <div class="col-12 col-md-10">
+      <input type="file" id="webzine_main_thumnail" class="form-control" placeholder="썸네일을 선택하세요">
+    </div>
+    <ul class="w-full" id="thumnail_file_list"></ul>
+  </div>
+
+  <!-- 페이지 노출 순서 -->
+  <div class="row mb-2 items-center mb-3">
+    <input type="hidden" id="idx">
+    <input type="hidden" id="type">
+    <label for="webzine_page_view_order" class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>페이지 노출 순서</label>
+    <div class="col-12 col-md-10">
+      <input type="number" id="webzine_page_view_order" maxlength="20" class="form-control" placeholder="같은 카테고리의 페이지가 여러개일때 먼저 보일 순서를 작성하세요. (페이지가 하나면 1을 작성하세요)" required="" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
+    </div>
+  </div>
+
+  <!-- 본문 내용 텍스트 -->
+  <div class="row items-center mb-4">
+    <label class="col-12 col-md-2 col-form-label
+        form-label text-muted"><span class="text-red-700 opacity-0">* </span>본문 내용(텍스트)</label>
+    <div class="col-12 col-md-10 flex items-center gap-2">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_word_break" id="chk_word_break_1" value="0">
+        <label class="form-check-label" for="chk_word_break_1">
+          화면에 맞춤 - 1(화면의 100% 꽉차게)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_word_break" id="chk_word_break_2" value="1">
+        <label class="form-check-label" for="chk_word_break_2">
+          화면에 맞춤 - 2(화면의 100% 꽉차게 + 단어의 끝에서 줄바꿈)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="chk_word_break" id="chk_word_break_3" value="2">
+        <label class="form-check-label" for="chk_word_break_3">
+          단어의 끝에서만 줄바꿈(화면의 100%가 아닌 단어의 끝에서 줄바꿈)
+        </label>
+      </div>
+    </div>
+  </div>
+  
+  <div class="w-full bg-gray-600 mb-5" style="height: 1px;"></div>
+
+  <!-- 콘텐츠 작성 에디터 -->
+  <div data-editor="BalloonEditor" data-collaboration="false" data-revision-history="false" class="row mb-2 items-center mb-5" style="margin: 0;">
+    <div class="editor" id="editor">
+     
+    </div>
+  </div>
+
+  <!-- 콘텐츠 내용이 생기는 부분 -->
+  <!-- <div class="p-2 bg-gray-300 mb-3" id="content_area">
+
+  </div>
+
+  <div class="row mb-2 items-center mb-3 content-plus-div">
+    <button class="btn btn-success w-full" id="btn_plus_content">+</button>
+    <ul class="content-ul" id="content_ul">
+      <li class="content-li btn_content_type" data-id="1">타이틀</li>
+      <li class="content-li btn_content_type" data-id="2">내용</li>
+      <li class="content-li btn_content_type" data-id="3">이미지</li>
+      <li class="content-li btn_content_type" data-id="4">공백</li>
+    </ul>
+  </div> -->
+
+
+
+
+
+  <div class="flex justify-end">
+    <button class="btn btn-danger display-none mr-2" id="btn_del_webzine_list">삭제</button>
+    <button class="btn btn-primary" id="btn_insert_webzine">등록</button>
+  </div>
+</div>

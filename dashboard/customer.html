@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ADDIT 고객사 게시판</title>
+
+  <!-- ggogle font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Boxicons CSS -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+  <!-- JQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.0.js"></script>
+
+  <!-- js -->
+  <script src="js/api.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/const.js"></script>
+  <script src="js/const_html.js"></script>
+  <script src="js/modal_function.js"></script>
+  <script src="js/ck_event.js"></script>
+  <script src="js/draw.js"></script>
+  <script src="js/utill.js"></script>
+
+  <!-- css -->
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- modal css -->
+  <link rel="stylesheet" href="css/modal.css">
+</head>
+<body>
+  <div class="alert-modal" id="alert_modal"></div>
+
+  <nav class="sidebar-nav" id="side_bar"></nav>
+
+  <section class="main-content p-10">
+    <div class="w-full c-list-div">
+      <div class="c-list">
+        <div class="w-full">
+          <input type="hidden" id="idx">
+          <h3 class="main-h2 flex-box"><span id="c_title">고객사 추가</span><button class="r-btn c-plus-btn display-none" id="customer_refresh"><i class='bx bx-refresh' ></i></button></h3>
+          <input class="s-input" type="text" id="customer_name" maxlength="50" placeholder="고객사명을 입력하세요.">
+          <div class="btn-group">
+            <button class="c-btn c-plus-btn" id="btn_insert_customer">고객사 추가</button>
+            <button class="c-btn c-del-btn display-none" id="btn_del_customer">고객사 삭제</button>
+          </div>
+        </div>
+        
+      </div>
+      <div class="c-table">
+        <button class="c-btn c-del-btn btn-sm" style="margin-bottom: 15px;" id="btn_check_del_cus">선택삭제</button>
+        <table class="s-table">
+          <thead class="s-thead">
+            <tr class="s-tr">
+              <th class="s-th" style="width: 20px;"><input type="checkbox" name="cus_all_check" id="cus_all_check"></th>
+              <th class="s-th" style="width: 50px;">번호</th>
+              <th class="s-th">고객사명</th>
+              <th class="s-th">고객사 고유 ID</th>
+            </tr>
+          </thead>
+          <tbody class="s-tbody" id="customer_list"></tbody>
+        </table>
+        <div class="pagenation" id="pagenation_div"></div>
+      </div>
+    </div>
+  </section>
+  
+
+
+  <!-- load.js -->
+  <script src="js/load_component.js"></script>
+</body>
+</html>

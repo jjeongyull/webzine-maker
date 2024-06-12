@@ -1,0 +1,80 @@
+.MultiCheckBox {
+    border:1px solid #e2e2e2;
+    /* padding: 5px; */
+    border-radius:4px;
+    cursor:pointer;
+    /* right: 28px; */
+    padding: 11px 7px;
+    font-size: 14px;
+}
+
+.MultiCheckBox .k-icon{ 
+    font-size: 15px;
+    float: right;
+    font-weight: bolder;
+    margin-top: -7px;
+    height: 10px;
+    width: 14px;
+    color:#787878;
+} 
+
+.MultiCheckBoxDetail {
+    display:none;
+    position: absolute;
+    border: 1px solid #e2e2e2;
+    background-color: white;
+    overflow-y: hidden;
+    z-index: 100;
+    top: 38px;
+    left: 0;
+    width: 191px !important;
+}
+
+.MultiCheckBoxDetailBody {
+    overflow-y:scroll;
+}
+
+.MultiCheckBoxDetail .cont  {
+    clear:both;
+    overflow: hidden;
+    padding: 2px;
+}
+
+.MultiCheckBoxDetail .cont:hover  {
+    background-color:#cfcfcf;
+}
+
+.MultiCheckBoxDetailBody > div > div {
+    float:left;
+}
+
+.MultiCheckBoxDetail>div>div:nth-child(1) {
+
+}
+
+.MultiCheckBoxDetailHeader {
+    overflow:hidden;
+    position:relative;
+    height: 32px;
+    background-color:#3d3d3d;
+}
+
+.MultiCheckBoxDetailHeader>input {
+    position: absolute;
+    top: 10px;
+    left: 4px;
+}
+
+.MultiCheckBoxDetailHeader>div {
+    position: absolute;
+    top: 5px;
+    left: 24px;
+    color:#fff;
+}
+
+.MultiCheckBoxDetailBody > div > div > input[type=checkbox] {
+    position: relative;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-left: 2px;
+}

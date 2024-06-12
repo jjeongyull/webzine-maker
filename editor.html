@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <script src="js/const.js"></script>
+  <script src="lib/ckeditor5/build/ckeditor.js"></script>
+  <!-- <link rel="stylesheet" href="admin/assets/css/ckeditor.css"> -->
+</head>
+<body>
+  <div style="width: 600px; margin: 0 auto;">
+    <div id="editor"></div>
+  </div>
+
+  <script>
+        ClassicEditor
+    .create( document.querySelector( '#editor' ), EditorConfig)
+    .then( editor => {
+      window.editor = editor;
+      console.log(editor)
+    } )
+    .catch(  );
+  </script>
+</body>
+</html>

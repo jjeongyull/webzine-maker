@@ -1,0 +1,50 @@
+{
+  "header": {
+    "style": "fixed",
+    "width": "1100",
+    "height": "60",
+    "logo": {
+      "src": "real_logo.png",
+      "link": "1",
+      "description": "로고",
+      "width": "180",
+      "position": "left"
+    },
+    "search": {
+      "visible": "0"
+    },
+    "menu": {
+      "position": "center",
+      "color": "white",
+      "size": "20",
+      "weight": "bold"
+    }
+  },
+  "width": "1100",
+  "footer": {
+    "visible": "1",
+    "width": "1100",
+    "position": "left",
+    "align": "flex",
+    "inner_align": "flex",
+    "src": "real_footer_logo.png",
+    "description": "로고",
+    "link": "1",
+    "logo_width": "150",
+    "customer_name": "한국표준협회",
+    "address": "삼선동4가 42",
+    "copyright": "copyright"
+  },
+  "floating": {
+    "visible": "1",
+    "template": "1",
+    "list": [
+      "kakao",
+      "facebook",
+      "link",
+      "pdf"
+    ]
+  },
+  "customer_idx": "3",
+  "uuid": "65cb268556151"
+}

@@ -1,0 +1,677 @@
+<div class="w-full flex items-start  flex-wrap">
+  <input type="hidden" id="idx">
+  <div class="w-full md:w-1/2 py-8 px-3 border relative">
+    <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide block text-left text-base">
+          <h2 class="w-full text-center mb-3 font-bold text-xl">헤더 설정</h2>
+          <!-- 헤더 스타일 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>헤더 스타일</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_header_style" id="chk_header_style_1" value="fixed">
+                <label class="form-check-label" for="chk_header_style_1">
+                  스크롤시 상단 고정(따라옴)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_header_style" id="chk_header_style_2" value="nomal">
+                <label class="form-check-label" for="chk_header_style_2">
+                  일반
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 헤더 넓이 -->
+          <div class="row items-center mb-2">
+            <label for="chk_header_width" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>헤더 넓이</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_header_width" id="chk_header_width_1" value="100%">
+                  <label class="form-check-label" for="chk_header_width_1">
+                    100%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_header_width" id="chk_header_width_2" value="write">
+                  <label class="form-check-label" for="chk_header_width_2">
+                    직접입력
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input type="number" id="header_width" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" class="form-control col-2" placeholder="상단의 넓이를 작성해주세요." disabled>
+                </div>
+              </div>
+          </div>
+
+          <!-- 헤더 높이 -->
+          <div class="row items-center mb-2">
+            <label for="header_height" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>헤더 높이</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <input type="number" id="header_height" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2" class="form-control col-2" placeholder="상단의 높이를 작성해주세요.">
+              </div>
+          </div>
+
+          <!-- 로고 -->
+          <div class="row items-center mb-2">
+            <label for="header_logo" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>로고</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="file" id="header_logo" maxlength="20" class="form-control" placeholder="상단로고를 선택하세요">
+            </div>
+            <div id="header_logo_preview"></div>
+          </div>
+
+          <!-- 로고 클릭 시 링크 사용여부 -->
+          <div class="row items-center mb-2">
+            <label for="chk_logo_link" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>로고 링크</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_logo_link" id="chk_logo_link_1" value="0">
+                  <label class="form-check-label" for="chk_logo_link_1">
+                    미사용
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_logo_link" id="chk_logo_link_2" value="1">
+                  <label class="form-check-label" for="chk_logo_link_2">
+                    사용(메인페이지)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_logo_link" id="chk_logo_link_3" value="2">
+                  <label class="form-check-label" for="chk_logo_link_3">
+                    링크 직접입력
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input type="text" id="logo_link" maxlength="1000" class="form-control col-2" placeholder="이동할 링크를 작성해주세요." disabled>
+                </div>
+              </div>
+          </div>
+          
+          <!-- 로고 설명 -->
+          <div class="row items-center mb-2">
+            <label for="header_logo_description" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>로고 설명</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="header_logo_description" maxlength="100" class="form-control" placeholder="로고에 대한 설명을 작성하세요">
+            </div>
+          </div>
+
+          <!-- 로고 크기 -->
+          <div class="row items-center mb-2">
+            <label for="header_logo_width" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>로고 크기</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="number" id="header_logo_width" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" class="form-control" placeholder="로고이미지의 넓이를 작성하시오. 예) 150, 200">
+            </div>
+          </div>
+
+          <!-- 로고 위치 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>로고 위치</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_logo_position" id="chk_logo_position_1" value="left">
+                <label class="form-check-label" for="chk_logo_position_1">
+                  LFFT
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_logo_position" id="chk_logo_position_2" value="center">
+                <label class="form-check-label" for="chk_logo_position_2">
+                  CENTER
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_logo_position" id="chk_logo_position_3" value="right">
+                <label class="form-check-label" for="chk_logo_position_3">
+                  RIGHT
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 검색 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>검색기능</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_search_active" id="chk_search_active_1" value="1">
+                <label class="form-check-label" for="chk_search_active_1">
+                  사용
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_search_active" id="chk_search_active_2" value="0">
+                <label class="form-check-label" for="chk_search_active_2">
+                  미사용
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 검색 탬플릿 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700 opacity-0">* </span>검색 탬플릿</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_search_tem" id="chk_search_tem_1" value="1" disabled>
+                <label class="form-check-label" for="chk_search_tem_1">
+                  탬플릿 1
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_search_tem" id="chk_search_tem_2" value="0" disabled>
+                <label class="form-check-label" for="chk_search_tem_2">
+                  탬플릿 2
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 검색 위치 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700 opacity-0">* </span>검색 위치</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_search_position" id="chk_search_position_1" value="center" disabled>
+                <label class="form-check-label" for="chk_search_position_1">
+                  CENTER
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_search_position" id="chk_search_position_2" value="right" disabled>
+                <label class="form-check-label" for="chk_search_position_2">
+                  RIGHT
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 메뉴 위치 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>메뉴 위치</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_menu_position" id="chk_menu_position_1" value="center">
+                <label class="form-check-label" for="chk_menu_position_1">
+                  CENTER
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_menu_position" id="chk_menu_position_2" value="right">
+                <label class="form-check-label" for="chk_menu_position_2">
+                  RIGHT
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 메뉴 color -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>메뉴 색상</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="menu_color" maxlength="100" class="form-control" placeholder="메뉴의 텍스트 색상을 입력하세요." readonly>
+            </div>
+          </div>
+
+          <!-- 메뉴 폰트 사이즈 -->
+          <div class="row mb-2 items-center mb-2">
+            <label for="menu_font_size" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>메뉴 폰트사이즈</label>
+            <div class="col-12 col-md-10 flex items-center">
+              <input type="range" class="form-range" id="menu_font_size" min="12" max="100" step="1" value="12">
+              <output class="ml-2" for="menu_font_size" id="menu_font_size_output">12</output>
+            </div>
+          </div>
+
+          <!-- 폰트 굵기 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>메뉴 폰크 굵기</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_menu_weight" id="chk_menu_weight_1" value="bold">
+                <label class="form-check-label" for="chk_menu_weight_1">
+                  굵게
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_menu_weight" id="chk_menu_weight_2" value="weight">
+                <label class="form-check-label" for="chk_menu_weight_2">
+                  얇게
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- <div class="row mb-2 items-center mb-3">
+            <label for="category_select" class="col-12 col-form-label
+                form-label text-muted mb-5 font-bold">메인 탬플릿을 선택하세요.</label>
+              <div class="col-12 flex gap-2" id="main_template_view">
+                <div class="form-check flex flex-col items-center justify-center w-1/2 border bg-gray-200 rounded py-3 px-5">
+                  <input class="form-check-input mb-3 ml-0" type="radio" name="chk_template" id="chk_template_0" value="0">
+                  <label class="form-check-label" for="chk_template_0">
+                    <img class="w-full" src="../admin/assets/images/main_template_img/template_0.png" alt="">
+                  </label>
+                </div>
+                <div class="form-check flex flex-col items-center justify-center w-1/2 border bg-gray-200 rounded py-3 px-5">
+                  <input class="form-check-input mb-3 ml-0" type="radio" name="chk_template" id="chk_template_1" value="1">
+                  <label class="form-check-label" for="chk_template_1">
+                    <img class="w-full" src="../admin/assets/images/main_template_img/template_1.png" alt="">
+                  </label>
+                </div>
+              </div>
+          </div> -->
+        </div>
+        <div class="swiper-slide block text-left text-base">
+          <h2 class="w-full text-center mb-5 font-bold text-xl">메인 화면설정 및 footer설정</h2>
+
+          <!-- 화면 넓이 -->
+          <div class="row items-center mb-2">
+            <label for="chk_main_width" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>화면 넓이</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_main_width" id="chk_main_width_1" value="100%">
+                  <label class="form-check-label" for="chk_main_width_1">
+                    100%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_main_width" id="chk_main_width_2" value="write">
+                  <label class="form-check-label" for="chk_main_width_2">
+                    직접입력
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input type="number" id="main_width" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" class="form-control col-2" placeholder="화면 프레임의 넓이를 작성해주세요." disabled>
+                </div>
+              </div>
+          </div>
+
+          <!-- footer 사용 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 정보 노출</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_active" id="chk_footer_active_1" value="visible">
+                <label class="form-check-label" for="chk_footer_active_1">
+                  노출
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_active" id="chk_footer_active_2" value="hidden">
+                <label class="form-check-label" for="chk_footer_active_2">
+                  미노출
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- footer넓이 -->
+          <div class="row items-center mb-2">
+            <label for="chk_main_width" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 넓이</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_footer_width" id="chk_footer_width_1" value="100%">
+                  <label class="form-check-label" for="chk_footer_width_1">
+                    100%
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_footer_width" id="chk_footer_width_2" value="write">
+                  <label class="form-check-label" for="chk_footer_width_2">
+                    직접입력
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input type="number" id="footer_width" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="4" class="form-control col-2" placeholder="하단의 넓이를 작성해주세요." disabled>
+                </div>
+              </div>
+          </div>
+
+          <!-- footer position -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 정보 위치</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_position" id="chk_footer_position_1" value="left">
+                <label class="form-check-label" for="chk_footer_position_1">
+                  LEFT
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_position" id="chk_footer_position_2" value="center">
+                <label class="form-check-label" for="chk_footer_position_2">
+                  CENTER
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_position" id="chk_footer_position_3" value="right">
+                <label class="form-check-label" for="chk_footer_position_3">
+                  RIGHT
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- footer 정렬 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 정보 정렬</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_align" id="chk_footer_align_1" value="flex">
+                <label class="form-check-label" for="chk_footer_align_1">
+                  가로
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_align" id="chk_footer_align_2" value="col">
+                <label class="form-check-label" for="chk_footer_align_2">
+                  세로
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- footer 내부 정렬 -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 내부 정렬</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_inner_align" id="chk_footer_inner_align_1" value="flex">
+                <label class="form-check-label" for="chk_footer_inner_align_1">
+                  가로(위)
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_inner_align" id="chk_footer_inner_align_2" value="flex">
+                <label class="form-check-label" for="chk_footer_inner_align_2">
+                  중앙
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_footer_inner_align" id="chk_footer_inner_align_3" value="col">
+                <label class="form-check-label" for="chk_footer_inner_align_3">
+                  세로(아래)
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- footer 로고 -->
+          <div class="row items-center mb-2">
+            <label for="webzine_name" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 로고</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="file" id="footer_logo" maxlength="20" class="form-control" placeholder="하단로고를 선택하세요">
+            </div>
+            <div id="footer_logo_preview"></div>
+          </div>
+
+          <!-- footer 로고 설명 -->
+          <div class="row items-center mb-2">
+            <label for="footer_logo_description" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 로고 설명</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="footer_logo_description" maxlength="20" class="form-control" placeholder="하단로고 설명을  입력하세요">
+            </div>
+          </div>
+
+           <!-- 하단 로고 클릭 시 링크 사용여부 -->
+           <div class="row items-center mb-2">
+            <label for="chk_logo_link" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단 로고 링크</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_f_logo_link" id="chk_f_logo_link_1" value="0">
+                  <label class="form-check-label" for="chk_f_logo_link_1">
+                    미사용
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_f_logo_link" id="chk_f_logo_link_2" value="1">
+                  <label class="form-check-label" for="chk_f_logo_link_2">
+                    사용(메인페이지)
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_f_logo_link" id="chk_f_logo_link_3" value="2">
+                  <label class="form-check-label" for="chk_f_logo_link_3">
+                    링크 직접입력
+                  </label>
+                </div>
+                <div class="col-4">
+                  <input type="text" id="f_logo_link" maxlength="1000" class="form-control col-2" placeholder="이동할 링크를 작성해주세요." disabled>
+                </div>
+              </div>
+          </div>
+
+          <!-- footer 로고 넓이 -->
+          <div class="row items-center mb-2">
+            <label for="footer_logo_width" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>로고 크기</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="number" id="footer_logo_width" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="3" class="form-control" placeholder="로고이미지의 넓이를 작성하시오. 예) 150, 200">
+            </div>
+          </div>
+
+          <!-- footer 하단 정보(회사명) -->
+          <div class="row items-center mb-2">
+            <label for="footer_customer_name" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단(회사명)</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="footer_customer_name" maxlength="100" class="form-control" placeholder="하단 정보에 들어갈 회사명을 입력하세요.">
+            </div>
+          </div>
+
+          <!-- footer 하단 정보(회사명) -->
+          <div class="row items-center mb-2">
+            <label for="footer_address" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단(주소)</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="footer_address" maxlength="100" class="form-control" placeholder="하단 정보에 들어갈 주소를 입력하세요.">
+            </div>
+          </div>
+
+          <!-- footer 하단 정보(copyright) -->
+          <div class="row items-center mb-2">
+            <label for="footer_copyright" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>하단(copyright)</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="footer_copyright" maxlength="100" class="form-control" placeholder="하단 정보에 들어갈 copyright를 입력하세요.">
+            </div>
+          </div>
+
+        </div>
+
+        <div class="swiper-slide block text-left text-base">
+
+
+
+          <!-- 지난호 보기 사용여부 -->
+          <div class="row items-center mb-2">
+            <label for="chk_last_vol_active_1" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>지난호 보기 사용</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_last_vol_active" id="chk_last_vol_active_1" value="0">
+                <label class="form-check-label" for="chk_last_vol_active_1">
+                  미사용
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_last_vol_active" id="chk_last_vol_active_2" value="1">
+                <label class="form-check-label" for="chk_last_vol_active_2">
+                  사용
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 플로팅메뉴 사용여부 -->
+          <div class="row items-center mb-2">
+            <label for="webzine_name" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>플로팅메뉴 사용</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_floating_menu_active" id="chk_floating_menu_none_active_1" value="0">
+                <label class="form-check-label" for="chk_floating_menu_none_active_1">
+                  미사용
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_floating_menu_active" id="chk_floating_menu_active_2" value="1">
+                <label class="form-check-label" for="chk_floating_menu_active_2">
+                  사용
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 플로팅메뉴 설정 -->
+          <div class="display-none" id="floating_menu_option_area">
+
+            <!-- 플로팅 탬플릿 -->
+            <div class="row items-center mb-2">
+              <label for="chk_floating_tem" class="col-12 col-md-2 col-form-label
+                  form-label text-muted"><span class="text-red-700 opacity-0">* </span>플로팅 탬플릿</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_floating_tem" id="chk_floating_tem_1" value="1">
+                  <label class="form-check-label" for="chk_floating_tem_1">
+                    탬플릿 1
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="radio" name="chk_floating_tem" id="chk_floating_tem_2" value="2">
+                  <label class="form-check-label" for="chk_floating_tem_2">
+                    탬플릿 2
+                  </label>
+                </div>
+              </div>
+            </div>
+
+            <!-- 플로팅 사용 리스트 -->
+            <div class="row items-center mb-2">
+              <label for="webzine_name" class="col-12 col-md-2 col-form-label
+                  form-label text-muted"><span class="text-red-700 opacity-0">* </span>플로팅 기능</label>
+              <div class="col-12 col-md-10 flex items-center gap-2">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="chk_floating_sns" id="chk_floating_kakao" value="kakao">
+                  <label class="form-check-label" for="chk_floating_kakao">
+                    카카오
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="chk_floating_sns" id="chk_floating_facebook" value="facebook">
+                  <label class="form-check-label" for="chk_floating_facebook">
+                    페이스북
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="chk_floating_sns" id="chk_floating_naver" value="naver">
+                  <label class="form-check-label" for="chk_floating_naver">
+                    블로그 || 밴드
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="chk_floating_sns" id="chk_floating_link" value="link">
+                  <label class="form-check-label" for="chk_floating_link">
+                    링크복사
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" name="chk_floating_sns" id="chk_floating_pdf" value="pdf">
+                  <label class="form-check-label" for="chk_floating_pdf">
+                    pdf첨부
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 웹진구독버튼 활성화 -->
+          <div class="row items-center mb-2">
+            <label for="chk_gudok_1" class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700">* </span>웹진구독버튼 사용</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_gudok" id="chk_gudok_1" value="0">
+                <label class="form-check-label" for="chk_gudok_1">
+                  미사용
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_gudok" id="chk_gudok_2" value="1">
+                <label class="form-check-label" for="chk_gudok_2">
+                  상단
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_gudok" id="chk_gudok_3" value="2">
+                <label class="form-check-label" for="chk_gudok_3">
+                  플로팅메뉴에 삽입
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="chk_gudok" id="chk_gudok_4" value="3">
+                <label class="form-check-label" for="chk_gudok_4">
+                  하단
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- 구독 url -->
+          <div class="row items-center mb-2">
+            <label class="col-12 col-md-2 col-form-label
+                form-label text-muted"><span class="text-red-700 opacity-0">* </span>웹진 구독 폼 주소</label>
+            <div class="col-12 col-md-10 flex items-center gap-2">
+              <input type="text" id="chk_gudok_url" maxlength="1000" class="form-control" placeholder="웹진 구독 폼 주소를 입력하세요.">
+            </div>
+          </div>
+
+          <!-- 지난호 보기 사용여부 -->
+
+
+        </div>
+      </div>
+    </div>
+    <div class="slide-btn-div">
+      <div class="swiper-button-prev" style="margin-top: 0;" id="btn_slide_prev">이전</div>
+      <div class="swiper-button-next" style="margin-top: 0;" id="btn_slide_next">다음</div>
+      <button class="btn btn-success display-none" id="btn_insert_option">등록</button>
+      <button class="btn btn-danger display-none" id="btn_del_option">삭제</button>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="w-full md:w-1/2 p-3 border">
+    <div id="preview_div"></div>
+    <div id="header_preview"></div>
+    <div id="banner_preview"></div>
+    <div id="section_preview"></div>
+    <div id="section_2_preview"></div>
+    <div id="footer_preview"></div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+{
+  "idx": 0,
+  "publish_idx": "",
+  "banner_type" : "slide",
+  "banner": {
+    "auto_change_time" : "0",
+    "slide_type" : "0",
+    "items" : [
+      {
+        "image" : "https://webzine.menteimo.com/img/2/2024-01/dsfdsfvc.jpg",
+        "link" : "12",
+        "title": {
+          "title": "표준 이슈 포커스 1월호",
+          "sub_title": "Vol.01",
+          "title_size": "40",
+          "title_weight": "blod",
+          "sub_title_size": "25",
+          "sub_title_weight": "bold",
+          "title_align": "center",
+          "title_position" : "center"
+        }
+      },
+      {
+        "image" : "https://webzine.menteimo.com/img/2/2024-01/bdfgvdfg.jpg",
+        "link" : "15",
+        "title": {
+          "title": "표준 이슈 포커스 1월호",
+          "sub_title": "Vol.01",
+          "title_size": "40",
+          "title_weight": "blod",
+          "sub_title_size": "25",
+          "sub_title_weight": "bold",
+          "title_align": "center",
+          "title_position" : "center"
+        }
+      }
+    ]
+  },
+  "active": 0
+}
+

@@ -1,0 +1,21 @@
+<div class="p-6">
+
+  <div class="row mb-3 items-center">
+    <input type="hidden" id="idx">
+    <label for="mem_email" class="col-md-3 col-form-label
+        form-label">이메일</label>
+    <div class="col-12 col-md-9">
+      <input type="text" id="mem_email" maxlength="50" class="form-control" placeholder="비밀번호를 발송할 메일을 입력하세요.">
+    </div>
+  </div>
+
+  <div class="mt-6 flex items-center justify-end gap-x-2">
+    <button type="button" class="btn btn-primary" id="btn_regen_pw">비밀번호 재발행</button>
+    <button type="button" class="btn btn-secondary" id="btn_modal_close">닫기</button>
+  </div>
+</div>
+
+
+<script>
+  $('#btn_modal_close').hide_popup();
+</script>

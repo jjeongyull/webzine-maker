@@ -1,0 +1,52 @@
+<div class="w-full">
+  <div class="card mb-5">
+    <div class="card-header p-4 bg-white flex items-center justify-between">
+      <h5 class="text-lg md:text-xl font-bold">웹진 카테고리</h5>
+      <button class="btn btn-primary btn-sm" id="btn_write_webzine_category">카테고리 작성하기</button>
+    </div>
+    <div class="card-body">
+      <ul class="flex gap-5" style="flex-wrap: wrap;" id="webzine_category_area">
+      </ul>
+    </div>
+  </div>
+  
+  <div class="card mb-5">
+    <div class="card-header p-4 bg-white flex items-center justify-between">
+      <h5 class="text-lg md:text-xl font-bold">웹진 메인페이지</h5>
+      <button class="btn btn-primary btn-sm" id="btn_write_webzine_main">월호 추가하기</button>
+    </div>
+    <div class="card-body">
+      <ul class="flex gap-5" style="flex-wrap: wrap;" id="webzine_main_area">
+      </ul>
+    </div>
+  </div>
+
+
+
+  <div class="card">
+    <div class="card-header p-4 bg-white flex items-center justify-between">
+      <h5 class="text-lg md:text-xl font-bold">웹진 콘텐츠 목록</h5>
+      <button class="btn btn-primary btn-sm" id="btn_write_webzine">콘텐츠 작성하기</button>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table text-nowrap" id="webzine_table">
+          <thead class="table-light">
+            <tr>
+              <th class="text-center"></th>
+              <th class="text-center">번호</th>
+              <th class="text-center">웹진 월</th>
+              <th class="text-center">카테고리</th>
+              <th class="text-center">서브 카테고리</th>
+              <th class="text-center">페에지 제목</th>
+              <th class="text-center">작성일</th>
+            </tr>
+          </thead>
+          <tbody id="webzine_list">
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
